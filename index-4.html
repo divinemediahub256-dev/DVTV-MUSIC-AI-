@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b16">
+<meta name="description" content="DVTV Music AI — Let music flow. Prepare lyrics, shape your sound, and preview your music in one place.">
+<title>DVTV Music AI — Let Music Flow</title>
+<style>
+:root{--bg:#090b16;--panel:#111526;--panel2:#171d32;--line:#2b3450;--text:#f6f7fb;--muted:#aab3ca;--gold:#f5c451;--purple:#9b8cff;--green:#51e0b0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#24204b 0,transparent 35%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{padding:18px 0;border-bottom:1px solid #ffffff16;position:sticky;top:0;background:#090b16eF;backdrop-filter:blur(14px);z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.3px}.logo{width:43px;height:43px;border-radius:14px;background:linear-gradient(135deg,var(--gold),#ff8b66);display:grid;place-items:center;color:#15111b;font-weight:1000;font-size:20px;box-shadow:0 8px 28px #f5c45128}.brand small{display:block;color:var(--muted);font-size:11px;font-weight:600;letter-spacing:1.5px}.navlinks{display:flex;gap:22px;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--gold)}
+.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}.btn:hover{transform:translateY(-1px)}.primary{background:var(--gold);color:#171321}.secondary{background:#ffffff0c;color:var(--text);border:1px solid var(--line)}
+.hero{padding:76px 0 48px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:38px}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border:1px solid #f5c45150;background:#f5c45112;border-radius:999px;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}h1{font-size:clamp(42px,6vw,70px);line-height:1.02;letter-spacing:-2.7px;margin:20px 0}.gradient{background:linear-gradient(100deg,var(--gold),#ff9c87 45%,var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:17px;max-width:560px}.heroactions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}.note{font-size:12px!important;color:#8d98b5!important;margin-top:17px}
+.visual{min-height:330px;border:1px solid #ffffff1a;border-radius:28px;background:linear-gradient(145deg,#1c2140dd,#111423);padding:25px;position:relative;overflow:hidden;box-shadow:0 25px 80px #0006}.visual:before,.visual:after{content:"";position:absolute;border-radius:50%;filter:blur(2px);opacity:.6}.visual:before{width:220px;height:220px;background:#9b8cff25;right:-55px;top:-60px}.visual:after{width:180px;height:180px;background:#f5c45120;left:-50px;bottom:-70px}.visualtop{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}.pill{font-size:11px;color:var(--green);border:1px solid #51e0b04a;padding:5px 9px;border-radius:30px;background:#51e0b010}.album{position:relative;z-index:1;margin:27px auto 19px;width:155px;height:155px;border-radius:27px;background:linear-gradient(140deg,#f5c451,#ff8a6e 48%,#8e79ff);display:grid;place-items:center;box-shadow:0 18px 50px #0005;transform:rotate(-4deg)}.album span{font-size:55px;color:#151321;text-shadow:0 3px 0 #ffffff50}.visual h3{text-align:center;margin:0;font-size:21px;position:relative;z-index:1}.visual .sub{text-align:center;color:var(--muted);font-size:13px;position:relative;z-index:1}.bars{height:42px;display:flex;align-items:center;justify-content:center;gap:4px;margin:16px 0;position:relative;z-index:1}.bars i{display:block;width:4px;border-radius:5px;background:linear-gradient(var(--gold),var(--purple));height:var(--h);animation:pulse 1s ease-in-out infinite alternate;animation-delay:var(--d)}@keyframes pulse{to{transform:scaleY(.35);opacity:.6}}
+section{padding:35px 0 55px}.sectionhead{margin-bottom:23px}.sectionhead .kicker{color:var(--gold);font-weight:800;font-size:12px;letter-spacing:1.5px;text-transform:uppercase}.sectionhead h2{font-size:clamp(27px,4vw,38px);margin:6px 0}.sectionhead p{color:var(--muted);margin:0}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.feature,.studio,.sidecard{background:linear-gradient(145deg,#151a2c,#101423);border:1px solid var(--line);border-radius:19px;padding:21px}.icon{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:#f5c45117;color:var(--gold);font-size:22px;margin-bottom:13px}.feature h3{margin:0 0 7px}.feature p{color:var(--muted);font-size:14px;margin:0}
+.workspace{display:grid;grid-template-columns:1.3fr .7fr;gap:18px;align-items:start}.studio h3,.sidecard h3{margin:0 0 6px}.muted{color:var(--muted);font-size:13px;margin-top:0}label{display:block;font-size:13px;font-weight:800;margin:18px 0 8px;color:#dfe4f3}input,select,textarea{width:100%;border:1px solid #35405f;background:#0b0f1d;color:var(--text);border-radius:11px;padding:13px 14px;font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--purple);box-shadow:0 0 0 3px #9b8cff20}textarea{min-height:160px;resize:vertical}::placeholder{color:#68738f}.row{display:grid;grid-template-columns:1fr 1fr;gap:13px}.full{width:100%;margin-top:15px}.output{margin-top:15px;border:1px dashed #515b7c;border-radius:12px;padding:14px;color:#c9d1e7;font-size:13px;white-space:pre-wrap;display:none}.output.show{display:block}.smallbtn{font-size:12px;padding:8px 10px}.sidecard{margin-bottom:15px}.step{display:flex;gap:11px;margin:15px 0}.num{width:27px;height:27px;flex:0 0 27px;border-radius:9px;background:#9b8cff20;color:#bcb1ff;display:grid;place-items:center;font-weight:900;font-size:12px}.step strong{display:block;font-size:13px}.step span{display:block;color:var(--muted);font-size:12px}.status{padding:12px;border-radius:12px;background:#f5c45110;border:1px solid #f5c45138;color:#f7d989;font-size:12px}
+.player{border:1px solid var(--line);background:#0c1020;border-radius:15px;padding:15px;margin-top:12px}.player input{padding:8px;border:0;background:transparent}.player audio{width:100%;margin-top:12px}
+footer{border-top:1px solid #ffffff16;padding:27px 0 35px;color:var(--muted);font-size:12px}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.foot strong{color:var(--text)}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:49px}.visual{min-height:300px}.features{grid-template-columns:1fr}.workspace{grid-template-columns:1fr}.navlinks{display:none}.row{grid-template-columns:1fr}.hero p{font-size:16px}h1{letter-spacing:-1.5px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#home"><span class="logo">DV</span><span>DVTV MUSIC AI<small>LET MUSIC FLOW</small></span></a>
+<nav class="navlinks"><a href="#features">Features</a><a href="#studio">Music Studio</a><a href="#player">Audio Player</a></nav>
+<a class="btn secondary" href="#studio">Open Studio ↗</a>
+</div></header>
+<main id="home">
+<div class="wrap hero">
+<div><span class="eyebrow"><span class="dot"></span> Your creative sound space</span>
+<h1>Turn your ideas into <span class="gradient">music.</span></h1>
+<p>Welcome to DVTV Music AI — a creative workspace for songwriters, singers and producers. Shape your lyrics, plan your sound, and preview audio files from your device.</p>
+<div class="heroactions"><a class="btn primary" href="#studio">✦ Start creating</a><a class="btn secondary" href="#player">♫ Play your audio</a></div>
+<p class="note">Built for creators in Uganda and around the world.</p></div>
+<div class="visual"><div class="visualtop"><strong>♫ NOW IN THE STUDIO</strong><span class="pill">CREATOR MODE</span></div><div class="album"><span>♫</span></div><h3>Your sound. Your story.</h3><div class="sub">Afrobeats · Amapiano · Gospel · Reggae · More</div><div class="bars" aria-hidden="true"><i style="--h:12px;--d:0.0s"></i><i style="--h:22px;--d:0.07s"></i><i style="--h:31px;--d:0.14s"></i><i style="--h:18px;--d:0.21000000000000002s"></i><i style="--h:37px;--d:0.28s"></i><i style="--h:26px;--d:0.35000000000000003s"></i><i style="--h:14px;--d:0.42000000000000004s"></i><i style="--h:33px;--d:0.49000000000000005s"></i><i style="--h:22px;--d:0.56s"></i><i style="--h:40px;--d:0.6300000000000001s"></i><i style="--h:17px;--d:0.7000000000000001s"></i><i style="--h:29px;--d:0.77s"></i><i style="--h:12px;--d:0.8400000000000001s"></i><i style="--h:34px;--d:0.9100000000000001s"></i><i style="--h:23px;--d:0.9800000000000001s"></i><i style="--h:15px;--d:1.05s"></i><i style="--h:38px;--d:1.12s"></i><i style="--h:20px;--d:1.1900000000000002s"></i><i style="--h:30px;--d:1.2600000000000002s"></i><i style="--h:13px;--d:1.33s"></i><i style="--h:25px;--d:1.4000000000000001s"></i><i style="--h:36px;--d:1.4700000000000002s"></i><i style="--h:18px;--d:1.54s"></i><i style="--h:28px;--d:1.61s"></i></div></div>
+</div>
+<section id="features"><div class="wrap"><div class="sectionhead"><div class="kicker">Made for creators</div><h2>Everything starts with an idea.</h2><p>Useful tools to prepare your next track — all in one clean workspace.</p></div>
+<div class="features">
+<div class="feature"><div class="icon">✍</div><h3>Lyrics workspace</h3><p>Write, paste and organize verses, hooks, choruses and song notes.</p></div>
+<div class="feature"><div class="icon">🎛</div><h3>Shape your sound</h3><p>Choose a genre, mood, tempo and vocal direction to prepare a clear music brief.</p></div>
+<div class="feature"><div class="icon">🎧</div><h3>Preview your audio</h3><p>Load an audio file from your phone and listen directly in the browser.</p></div>
+</div></div></section>
+<section id="studio"><div class="wrap"><div class="sectionhead"><div class="kicker">Creative workspace</div><h2>Build your music brief</h2><p>Enter your lyrics and preferences. Generate a prompt you can use with a compatible AI music service.</p></div>
+<div class="workspace"><div class="studio"><h3>Song details</h3><p class="muted">Your text stays in this page; this demo does not upload it to a server.</p>
+<label for="title">Song title</label><input id="title" maxlength="100" placeholder="e.g. Tusonge Mbele">
+<div class="row"><div><label for="genre">Music style</label><select id="genre"><option>East African Afrobeat</option><option>Ugandan Dancehall</option><option>Amapiano</option><option>African Roots Reggae</option><option>Afro-Reggae</option><option>Gospel / Worship</option><option>Afro-pop</option><option>R&B / Soul</option><option>Hip-hop</option><option>Acoustic</option></select></div><div><label for="mood">Mood</label><select id="mood"><option>Energetic and uplifting</option><option>Joyful and celebratory</option><option>Inspirational</option><option>Romantic</option><option>Reflective and emotional</option><option>Prayerful and peaceful</option><option>Bold and powerful</option></select></div></div>
+<div class="row"><div><label for="tempo">Tempo</label><select id="tempo"><option>Medium groove (95–110 BPM)</option><option>Slow (65–85 BPM)</option><option>Dance groove (111–125 BPM)</option><option>Fast (126–145 BPM)</option><option>Let the AI decide</option></select></div><div><label for="vocal">Vocal direction</label><select id="vocal"><option>Natural lead vocal with backing harmonies</option><option>Male lead vocal</option><option>Female lead vocal</option><option>Male and female duet</option><option>Group chant / crowd vocals</option><option>Choir-led vocals</option><option>Instrumental only</option></select></div></div>
+<label for="lyrics">Lyrics / song idea</label><textarea id="lyrics" placeholder="Paste your original lyrics here…&#10;&#10;[Verse 1]&#10;Write your lines here…&#10;&#10;[Chorus]&#10;Write your hook here…"></textarea>
+<button class="btn primary full" id="makePrompt">✦ Create my music prompt</button><div id="output" class="output" aria-live="polite"></div><button class="btn secondary full" id="copyPrompt" style="display:none">Copy music prompt</button>
+</div>
+<aside><div class="sidecard"><h3>How to use this studio</h3><div class="step"><div class="num">1</div><div><strong>Add your song idea</strong><span>Paste your lyrics or describe the song.</span></div></div><div class="step"><div class="num">2</div><div><strong>Choose your sound</strong><span>Select a genre, mood, tempo and vocal style.</span></div></div><div class="step"><div class="num">3</div><div><strong>Copy your prompt</strong><span>Use it in an AI music service that accepts custom lyrics.</span></div></div></div>
+<div class="sidecard"><h3>AI singing status</h3><p class="muted">This website's current version prepares prompts but is not yet connected to an AI singing engine.</p><div class="status">● Prompt builder ready<br>○ AI song generation: connection required<br>○ Server-side MP3 export: connection required</div></div></aside>
+</div></div></section>
+<section id="player"><div class="wrap"><div class="sectionhead"><div class="kicker">Listen back</div><h2>Your audio player</h2><p>Choose an audio file stored on your phone to preview it here.</p></div>
+<div class="studio"><label for="audioFile">Choose an audio file</label><input id="audioFile" type="file" accept="audio/*"><div class="player"><strong id="audioName">No audio selected</strong><audio id="audio" controls style="display:none"></audio><p class="muted">Supported formats depend on your browser (commonly MP3, WAV, M4A and OGG).</p></div></div>
+</div></section>
+</main>
+<footer><div class="wrap foot"><span><strong>DVTV MUSIC AI</strong> · Let music flow</span><span>© <span id="year"></span> DVTV Music AI. Created for music lovers.</span></div></footer>
+<script>
+const $=id=>document.getElementById(id);
+let promptText='';
+$('year').textContent=new Date().getFullYear();
+$('makePrompt').addEventListener('click',()=>{
+ const title=$('title').value.trim()||'Untitled song';
+ const genre=$('genre').value, mood=$('mood').value, tempo=$('tempo').value, vocal=$('vocal').value;
+ const lyrics=$('lyrics').value.trim();
+ promptText=`SONG TITLE: ${title}\\nSTYLE: ${genre}\\nMOOD: ${mood}\\nTEMPO: ${tempo}\\nVOCALS: ${vocal}\\n\\nPRODUCTION DIRECTION:\\nCreate an original, polished song with a memorable melody, clear vocals, balanced instrumentation and a professional mix. Keep the rhythm natural to East African listeners where appropriate. Preserve the supplied lyrics exactly unless asked to edit them. Avoid imitating any specific living artist.\\n\\nLYRICS / IDEA:\\n${lyrics||'[Add your lyrics or song idea here.]'}`;
+ $('output').textContent=promptText;$('output').classList.add('show');$('copyPrompt').style.display='block';
+});
+$('copyPrompt').addEventListener('click',async()=>{
+ try{await navigator.clipboard.writeText(promptText);$('copyPrompt').textContent='Copied ✓';}
+ catch(e){const ta=document.createElement('textarea');ta.value=promptText;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();$('copyPrompt').textContent='Copied ✓';}
+ setTimeout(()=>$('copyPrompt').textContent='Copy music prompt',1800);
+});
+$('audioFile').addEventListener('change',()=>{
+ const file=$('audioFile').files[0];if(!file)return;
+ const audio=$('audio');if(audio.dataset.url)URL.revokeObjectURL(audio.dataset.url);
+ const url=URL.createObjectURL(file);audio.src=url;audio.dataset.url=url;audio.style.display='block';$('audioName').textContent=file.name;
+});
+</script>
+</body>
+</html>
