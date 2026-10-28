@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#111827">
+<meta name="description" content="DVTV MUSIC AI — write lyrics, plan songs, and organize your music projects.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<title>DVTV MUSIC AI</title>
+<style>
+:root{--bg:#0b1020;--panel:#141c31;--panel2:#1b2742;--gold:#f7c948;--gold2:#ffdf7e;--text:#f8fafc;--muted:#a9b5cc;--line:#2c3957;--green:#54d6a0}
+*{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at top right,#1d2c50 0,#0b1020 42%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}
+header{padding:24px 18px 18px;max-width:900px;margin:auto}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:52px;height:52px;border-radius:16px;background:linear-gradient(145deg,var(--gold2),#e5a900);display:grid;place-items:center;color:#111827;font-weight:1000;font-size:19px;box-shadow:0 8px 24px #f7c94822}
+h1{font-size:clamp(23px,5vw,32px);margin:0;letter-spacing:.4px}.tag{color:var(--muted);font-size:13px;margin-top:4px}
+.badge{display:inline-flex;align-items:center;gap:7px;margin-top:18px;background:#17243b;border:1px solid #354665;color:#dce7fb;border-radius:99px;padding:8px 12px;font-size:12px}.dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
+main{max-width:900px;margin:auto;padding:0 14px 34px}.tabs{display:flex;gap:8px;overflow:auto;padding:0 2px 14px}.tab{border:1px solid var(--line);border-radius:12px;background:#121a2d;color:var(--muted);padding:11px 14px;white-space:nowrap;font-weight:700;cursor:pointer}.tab.active{background:var(--gold);border-color:var(--gold);color:#151515}
+.card{background:linear-gradient(180deg,#172139,#11192c);border:1px solid var(--line);border-radius:20px;padding:18px;margin-bottom:14px;box-shadow:0 14px 40px #0002}
+h2{font-size:20px;margin:0 0 7px}.sub{color:var(--muted);font-size:13px;line-height:1.5;margin:0 0 17px}
+label{display:block;font-size:13px;font-weight:750;color:#dbe5f7;margin:15px 0 7px}input,select,textarea{width:100%;border:1px solid #364564;border-radius:12px;background:#0c1426;color:var(--text);padding:13px;font:inherit;outline:none}textarea{min-height:145px;resize:vertical;line-height:1.5}input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px #f7c94818}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btn{border:0;border-radius:12px;padding:13px 15px;font-weight:850;cursor:pointer;font-size:14px}.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#171717}.secondary{background:#263553;border:1px solid #405273;color:#fff}.outline{background:transparent;border:1px solid #50617f;color:#e8eef9}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.hint{font-size:12px;color:var(--muted);line-height:1.5;margin-top:12px}.notice{padding:12px;border-radius:12px;background:#302913;border:1px solid #6e5922;color:#ffe9a9;font-size:12px;line-height:1.5;margin-top:14px}
+.hidden{display:none!important}.project{padding:14px;border:1px solid var(--line);border-radius:14px;margin:10px 0;background:#0e172a}.project h3{margin:0 0 5px;font-size:16px}.meta{font-size:12px;color:var(--muted);margin-bottom:10px}.project p{font-size:13px;white-space:pre-wrap;line-height:1.45;color:#dbe5f7;margin:0 0 10px;max-height:100px;overflow:hidden}
+.empty{padding:25px;text-align:center;color:var(--muted);border:1px dashed #3b4a68;border-radius:14px}
+footer{text-align:center;color:#8290aa;font-size:11px;padding:10px 15px 25px;line-height:1.6}
+.small-title{color:var(--gold2);font-size:12px;font-weight:900;letter-spacing:1.4px;margin-bottom:7px}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.card{padding:15px}.actions .btn{flex:1}.brand{align-items:flex-start}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><div class="logo">DV</div><div><h1>DVTV MUSIC AI</h1><div class="tag">Your ideas. Your sound. Your music journey.</div></div></div>
+  <div class="badge"><span class="dot"></span> Free-first workspace · Online music generation</div>
+</header>
+<main>
+  <nav class="tabs" aria-label="App sections">
+    <button class="tab active" data-tab="create">🎵 Create a Song</button>
+    <button class="tab" data-tab="lyrics">✍️ Write Lyrics</button>
+    <button class="tab" data-tab="library">🎧 My Library</button>
+    <button class="tab" data-tab="help">ℹ️ How to Use</button>
+  </nav>
+
+  <section id="create" class="view">
+    <div class="card">
+      <div class="small-title">MAKE SOMETHING ORIGINAL</div>
+      <h2>Create your next song</h2>
+      <p class="sub">Describe your sound, add lyrics, save your project, then open a free online AI music generator to create audio.</p>
+      <label for="title">Song title</label><input id="title" placeholder="e.g. My Wonderful God">
+      <div class="grid">
+        <div><label for="genre">Music style</label><select id="genre"><option>Ugandan Afrobeat</option><option>Luganda Gospel</option><option>Ugandan Dancehall</option><option>Amapiano</option><option>Afro-gospel</option><option>Reggae</option><option>Hip-hop</option><option>R&B / Soul</option><option>Acoustic</option><option>Instrumental</option><option>Custom style</option></select></div>
+        <div><label for="mood">Mood</label><select id="mood"><option>Energetic and uplifting</option><option>Worshipful and emotional</option><option>Joyful celebration</option><option>Romantic</option><option>Motivational</option><option>Peaceful and reflective</option><option>Powerful and dramatic</option></select></div>
+      </div>
+      <label for="voice">Vocal direction</label><select id="voice"><option>Male lead vocal</option><option>Female lead vocal</option><option>Male and female duet</option><option>Group / choir vocals</option><option>Voice-only intro, then music</option><option>Instrumental only — no vocals</option></select>
+      <label for="language">Language</label><select id="language"><option>Luganda</option><option>English</option><option>Luganda and English</option><option>Lusoga</option><option>Lugishu</option><option>Swahili</option><option>Other / mixed Ugandan languages</option></select>
+      <label for="description">Extra instructions for the AI</label><textarea id="description" placeholder="Example: Ugandan percussion, warm bass, catchy chorus, clear pronunciation, professional studio mix."></textarea>
+      <label for="lyrics">Lyrics (optional)</label><textarea id="lyrics" placeholder="Paste your lyrics here. Include [Intro], [Verse 1], [Chorus], [Verse 2], [Bridge] and [Outro] if you like."></textarea>
+      <div class="actions"><button class="btn primary" id="saveProject">Save Song Project</button><button class="btn secondary" id="makePrompt">Build AI Prompt</button></div>
+      <div id="promptBox" class="hidden">
+        <label for="promptOutput">Your ready-to-copy AI prompt</label><textarea id="promptOutput" readonly></textarea>
+        <div class="actions"><button class="btn primary" id="copyPrompt">Copy Prompt</button><button class="btn secondary" id="openGenerator">Open Free AI Generator ↗</button><button class="btn outline" id="downloadPrompt">Download Prompt</button></div>
+      </div>
+      <div class="notice"><strong>Important:</strong> This first version organizes your song and prepares prompts. Actual audio generation happens on an external AI service; free limits, sign-in, data use, and download availability depend on that service.</div>
+    </div>
+  </section>
+
+  <section id="lyrics" class="view hidden">
+    <div class="card">
+      <div class="small-title">LYRICS WORKSPACE</div><h2>Write and polish lyrics</h2>
+      <p class="sub">Use this workspace to draft lyrics, structure verses, and export your writing. It does not automatically generate lyrics with a separate AI model.</p>
+      <label for="lyTitle">Lyrics title</label><input id="lyTitle" placeholder="Enter song title">
+      <label for="lyText">Your lyrics</label><textarea id="lyText" style="min-height:260px" placeholder="[Intro — spoken voice only]\n...\n\n[Verse 1]\n...\n\n[Chorus]\n...\n\n[Verse 2]\n...\n\n[Outro]\n..."></textarea>
+      <div class="actions"><button class="btn primary" id="saveLyrics">Save Lyrics</button><button class="btn secondary" id="downloadLyrics">Download .TXT</button><button class="btn outline" id="sendToCreate">Use in Song Creator</button></div>
+    </div>
+  </section>
+
+  <section id="library" class="view hidden">
+    <div class="card"><div class="small-title">YOUR WORKSPACE</div><h2>My Music Library</h2><p class="sub">Projects are stored in this browser on this device. Clearing browser data may remove them, so download important work for backup.</p><div id="projects"></div><div class="actions"><button class="btn outline" id="exportLibrary">Export Library Backup</button><button class="btn outline" id="clearLibrary">Clear Library</button></div></div>
+  </section>
+
+  <section id="help" class="view hidden">
+    <div class="card"><div class="small-title">QUICK START</div><h2>How to use DVTV MUSIC AI</h2>
+      <p class="sub">1. Open <b>Create a Song</b> and enter your title, style, mood, language, voice and lyrics.<br><br>2. Tap <b>Build AI Prompt</b>, then copy the prompt or download it.<br><br>3. Tap <b>Open Free AI Generator</b>. On the external service, paste your prompt and follow its instructions to generate and download audio if available.<br><br>4. Return here and save your project. Use <b>My Library</b> to reopen projects or export a backup.<br><br>5. To add the app to your Android home screen, open this website in Chrome and choose <b>⋮ → Add to Home screen</b> or <b>Install app</b> if available.</p>
+      <div class="notice">This prototype does not yet connect directly to a music-generation API. A true in-app generator requires a reliable provider or server integration. Never enter payment details or sensitive information into a service you have not verified.</div>
+    </div>
+  </section>
+</main>
+<footer>DVTV MUSIC AI · Prototype v1.0<br>Free-first design. External music services have their own terms, limits and privacy policies.</footer>
+<script>
+const GENERATOR_URL = "https://yue2ai.online/";
+const $ = id => document.getElementById(id);
+const getProjects = () => { try { return JSON.parse(localStorage.getItem("dvtv_music_projects") || "[]"); } catch(e) { return []; } };
+const putProjects = p => localStorage.setItem("dvtv_music_projects", JSON.stringify(p));
+document.querySelectorAll(".tab").forEach(btn => btn.addEventListener("click", () => {
+  document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b===btn));
+  document.querySelectorAll(".view").forEach(v => v.classList.toggle("hidden", v.id !== btn.dataset.tab));
+  if(btn.dataset.tab==="library") renderProjects();
+}));
+function buildPrompt(){
+  const title=$("title").value.trim() || "Untitled Song";
+  const genre=$("genre").value, mood=$("mood").value, voice=$("voice").value, language=$("language").value;
+  const extra=$("description").value.trim(), lyrics=$("lyrics").value.trim();
+  return `Create an original song titled "${title}".\nMusic style: ${genre}.\nMood: ${mood}.\nVocal direction: ${voice}.\nLanguage: ${language}.\nProduction direction: polished, balanced mix, clear vocals, suitable arrangement and a memorable musical hook.${extra ? "\nAdditional instructions: "+extra : ""}${lyrics ? "\n\nUse these lyrics as the source material. Preserve the wording as closely as possible:\n"+lyrics : "\n\nCompose suitable original lyrics for this title and direction."}`;
+}
+function saveProject(title, lyrics, prompt, kind="Song project"){
+  const projects=getProjects(); projects.unshift({id:Date.now(),title:title||"Untitled",lyrics:lyrics||"",prompt:prompt||"",kind,created:new Date().toLocaleString()}); putProjects(projects.slice(0,100)); alert("Saved to My Music Library on this device.");
+}
+$("makePrompt").addEventListener("click",()=>{$("promptOutput").value=buildPrompt();$("promptBox").classList.remove("hidden");$("promptBox").scrollIntoView({behavior:"smooth",block:"nearest"});});
+$("saveProject").addEventListener("click",()=>saveProject($("title").value,$("lyrics").value,buildPrompt()));
+$("copyPrompt").addEventListener("click",async()=>{try{await navigator.clipboard.writeText($("promptOutput").value);alert("Prompt copied.");}catch(e){$("promptOutput").select();document.execCommand("copy");alert("Prompt selected/copied if supported.");}});
+$("openGenerator").addEventListener("click",()=>window.open(GENERATOR_URL,"_blank","noopener"));
+function download(name, content, type="text/plain"){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=name;a.click();URL.revokeObjectURL(url);}
+$("downloadPrompt").addEventListener("click",()=>download((($("title").value||"song").replace(/[^a-z0-9-_]+/gi,"_"))+"_AI_prompt.txt",$("promptOutput").value));
+$("saveLyrics").addEventListener("click",()=>saveProject($("lyTitle").value,$("lyText").value,"","Lyrics only"));
+$("downloadLyrics").addEventListener("click",()=>download((($("lyTitle").value||"lyrics").replace(/[^a-z0-9-_]+/gi,"_"))+".txt",$("lyText").value));
+$("sendToCreate").addEventListener("click",()=>{$("title").value=$("lyTitle").value;$("lyrics").value=$("lyText").value;document.querySelector('[data-tab="create"]').click();});
+function renderProjects(){const p=getProjects(),root=$("projects");if(!p.length){root.innerHTML='<div class="empty">No saved projects yet.<br>Save a song or lyrics draft to see it here.</div>';return;}root.innerHTML=p.map(x=>`<div class="project"><h3>${esc(x.title)}</h3><div class="meta">${esc(x.kind)} · ${esc(x.created)}</div>${x.lyrics?`<p>${esc(x.lyrics)}</p>`:""}<div class="actions"><button class="btn secondary" onclick="loadProject(${x.id})">Open</button><button class="btn outline" onclick="downloadProject(${x.id})">Download</button><button class="btn outline" onclick="deleteProject(${x.id})">Delete</button></div></div>`).join("");}
+function esc(s){return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+window.loadProject=id=>{const x=getProjects().find(p=>p.id===id);if(!x)return;if(x.kind==="Lyrics only"){$("lyTitle").value=x.title;$("lyText").value=x.lyrics;document.querySelector('[data-tab="lyrics"]').click();}else{$("title").value=x.title;$("lyrics").value=x.lyrics;$("promptOutput").value=x.prompt;if(x.prompt)$("promptBox").classList.remove("hidden");document.querySelector('[data-tab="create"]').click();}};
+window.downloadProject=id=>{const x=getProjects().find(p=>p.id===id);if(x)download(x.title.replace(/[^a-z0-9-_]+/gi,"_")+"_project.txt",`Title: ${x.title}\nType: ${x.kind}\nCreated: ${x.created}\n\nPROMPT:\n${x.prompt}\n\nLYRICS:\n${x.lyrics}`);};
+window.deleteProject=id=>{if(confirm("Delete this project from this device?")){putProjects(getProjects().filter(p=>p.id!==id));renderProjects();}};
+$("exportLibrary").addEventListener("click",()=>download("DVTV_MUSIC_AI_library_backup.json",JSON.stringify(getProjects(),null,2),"application/json"));
+$("clearLibrary").addEventListener("click",()=>{if(confirm("Permanently clear all locally saved projects? Download a backup first if needed.")){putProjects([]);renderProjects();}});
+if("serviceWorker" in navigator && (location.protocol==="https:" || location.hostname==="localhost")) navigator.serviceWorker.register("./sw.js").catch(()=>{});
+</script>
+</body>
+</html>
